@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from django import forms
-from django.db import transaction
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 
@@ -37,7 +36,6 @@ class FeedbackForm(ContactForm):
             raise forms.ValidationError(self.fields["honeypot"].label)
         return value
 
-    @transaction.commit_on_success
     def save(self, fail_silently=False):
         super(FeedbackForm, self).save(fail_silently)
         messages.success(self.request, _("Your email was sent successfully!"))
