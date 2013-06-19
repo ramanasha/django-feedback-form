@@ -17,11 +17,11 @@ setup(
     url='http://github.com/bashu/django-feedback-form',
     author='Basil Shubin',
     install_requires=[
-        'django-contact-form-dev',
         'django-crispy-forms',
+        'django-contact-form-ng',
     ],
     dependency_links = [
-        'http://github.com/bashu/django-contact-form/tarball/master#egg=django-contact-form-dev',
+        'http://github.com/bashu/django-contact-form/tarball/master#egg=django-contact-form-ng',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[
