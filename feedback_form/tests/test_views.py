@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 
 
-class ViewTest(TestCase):
+class FeedbackFormTest(TestCase):
 
     def setUp(self):
         self.base_url = 'http://testserver'

@@ -3,8 +3,6 @@
 from django.core.urlresolvers import reverse
 from django.contrib.sitemaps import Sitemap
 
-__all__ = ['FeedbackSitemap']
-
 
 class FeedbackSitemap(Sitemap):
     changefreq = "never"

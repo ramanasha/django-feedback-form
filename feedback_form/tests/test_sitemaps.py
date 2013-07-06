@@ -10,6 +10,6 @@ class FeedbackSitemapTest(TestCase):
     def setUp(self):
         self.base_url = 'http://testserver'
 
-    def test_sitemap(self):
+    def test_default(self):
         sitemap = FeedbackSitemap()
         self.assertEquals(len(sitemap.items()), 1)
