@@ -1,0 +1,5 @@
+django==1.4.5
+django-crispy-forms
+-e git+https://github.com/bashu/django-contact-form.git#egg=django-contact-form
+pep8
+pyflakes
