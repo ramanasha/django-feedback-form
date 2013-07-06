@@ -13,3 +13,6 @@ class FeedbackSitemapTest(TestCase):
     def test_default(self):
         sitemap = FeedbackSitemap()
         self.assertEquals(len(sitemap.items()), 1)
+
+        items = sitemap.items()
+        self.assertEquals(sitemap.location(items[0]), '/feedback/')
