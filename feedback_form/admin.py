@@ -19,7 +19,7 @@ class FeedbackAdmin(admin.ModelAdmin):
         verbose_name = _("Feedback")
         verbose_name_plural = _("Feedback")
 
-    def email_link(cls, obj):
+    def email_link(self, obj):
         if obj.user_id is not None:
             return """<a href="%(url)s">%(email)s</a>""" % {
                 'url': reverse('admin:auth_user_change', args=[obj.user_id]),
