@@ -19,7 +19,6 @@ class FeedbackAdmin(admin.ModelAdmin):
         verbose_name = _("Feedback")
         verbose_name_plural = _("Feedback")
 
-    @classmethod
     def email_link(cls, obj):
         if obj.user_id is not None:
             return """<a href="%(url)s">%(email)s</a>""" % {
