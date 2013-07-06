@@ -28,6 +28,8 @@ PROJECT_APPS = [
 INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.sites',
+    'django.contrib.admin',
+    'django.contrib.sessions',
     'django.contrib.contenttypes',
     'django.contrib.messages',
 
