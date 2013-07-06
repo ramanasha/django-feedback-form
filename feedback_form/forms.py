@@ -3,13 +3,13 @@
 from django.contrib import messages
 from django.utils.translation import ugettext as _
 
-from contact_form.forms import ContactForm
+from contact_form.forms import AkismetContactForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Field, Div, ButtonHolder
 
 
-class FeedbackForm(ContactForm):
+class FeedbackForm(AkismetContactForm):
 
     helper = FormHelper()
     helper.form_class = 'form-horizontal'
