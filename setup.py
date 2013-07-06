@@ -20,6 +20,7 @@ setup(
         'http://github.com/bashu/django-contact-form/tarball/master#egg=django-contact-form-ng',
     ],
     install_requires=[
+        'akismet',
         'django-crispy-forms',
         'django-contact-form-ng',
     ],
