@@ -19,6 +19,10 @@ setup(
     install_requires=[
         'akismet',
         'django-crispy-forms',
+        'django-teagmhail',
+    ],
+    dependency_links = [
+        'http://github.com/bashu/django-teagmhail/tarball/master#egg=django-teagmhail',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[
