@@ -17,7 +17,6 @@ class FeedbackForm(AkismetContactForm):
         Field('name', css_class='input-xlarge'),
         Field('email', css_class='input-xlarge'),
         Field('body', rows="6", css_class='input-xxlarge'),
-        'honeypot',
         ButtonHolder(
             Div(Submit('submit', _("Send message"), css_class="btn-success"),
                 css_class='controls'),
