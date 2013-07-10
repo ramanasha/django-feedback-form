@@ -1,7 +1,7 @@
 django==1.4.5
 akismet
 django-crispy-forms
--e git+https://github.com/bashu/django-teagmhail.git#egg=django-teagmhail
--e git+https://github.com/kmmbvnr/django-jenkins.git#egg=django-jenkins
+git+https://github.com/bashu/django-teagmhail.git
+git+https://github.com/kmmbvnr/django-jenkins.git
 pep8
 pyflakes
