@@ -19,6 +19,9 @@ class FeedbackAdmin(admin.ModelAdmin):
         verbose_name = _("Feedback")
         verbose_name_plural = _("Feedback")
 
+    def has_add_permission(self, request):
+        return False
+
     def email_link(self, obj):
         if obj.user_id is not None:
             return """<a href="%(url)s">%(email)s</a>""" % {
