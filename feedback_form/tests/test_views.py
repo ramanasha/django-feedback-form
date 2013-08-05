@@ -9,7 +9,7 @@ class FeedbackViewTest(TestCase):
     def setUp(self):
         self.base_url = 'http://testserver'
 
-    def test_success_case_with_redirect(self):
+    def test_success_with_redirect(self):
         data = {
             'name': 'Joe User',
             'email': 'joeuser@example.com',
