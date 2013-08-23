@@ -33,8 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
 
-    'django_jenkins',
     'contact_form',
+    'django_jenkins',
+    'discover_runner',
     ] + PROJECT_APPS
 
 TEMPLATE_DIRS = [
@@ -45,12 +46,15 @@ SITE_ID = 1
 
 ROOT_URLCONF = 'test_urls'
 
+TEST_RUNNER = 'discover_runner.DiscoverRunner'
+
 JENKINS_TASKS = (
-    'django_jenkins.tasks.run_pylint',
-    'django_jenkins.tasks.run_pep8',
-    'django_jenkins.tasks.run_pyflakes',
     'django_jenkins.tasks.with_coverage',
     'django_jenkins.tasks.django_tests',
+    'django_jenkins.tasks.dir_tests',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.run_pep8',
     )
 
 COVERAGE_EXCLUDES_FOLDERS = ['feedback_form/tests/*']
@@ -65,6 +69,7 @@ if __name__ == "__main__":
         MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES,
         SITE_ID = SITE_ID,
         PROJECT_APPS = PROJECT_APPS,
+        TEST_RUNNER = TEST_RUNNER,
         JENKINS_TASKS = JENKINS_TASKS,
         COVERAGE_EXCLUDES_FOLDERS = COVERAGE_EXCLUDES_FOLDERS,
         PYLINT_RCFILE = PYLINT_RCFILE,
