@@ -17,8 +17,8 @@ setup(
     url='http://github.com/bashu/django-feedback-form',
     author='Basil Shubin',
     install_requires=[
-        'akismet',
-        'django-crispy-forms',
+        'akismet==0.2.0',
+        'django-crispy-forms==1.4.0',
         'django-teagmhail',
     ],
     dependency_links = [
