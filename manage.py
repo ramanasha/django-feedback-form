@@ -33,8 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
 
-    'contact_form',
     'crispy_forms',
+    'contact_form',
     'django_jenkins',
     'discover_runner',
     ] + PROJECT_APPS
@@ -52,12 +52,9 @@ ROOT_URLCONF = 'test_urls'
 TEST_RUNNER = 'discover_runner.DiscoverRunner'
 
 JENKINS_TASKS = (
-    'django_jenkins.tasks.with_coverage',
-    'django_jenkins.tasks.django_tests',
-    'django_jenkins.tasks.dir_tests',
-    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_flake8',
     'django_jenkins.tasks.run_pylint',
-    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.with_coverage',
     )
 
 COVERAGE_EXCLUDES_FOLDERS = ['feedback_form/tests/*']
