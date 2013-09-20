@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-feedback-form',
-    version='0.1',
+    version='0.1.1',
     packages=['feedback_form'],
     include_package_data=True,
     license='BSD License',
@@ -19,10 +19,7 @@ setup(
     install_requires=[
         'akismet==0.2.0',
         'django-crispy-forms==1.4.0',
-        'django-teagmhail',
-    ],
-    dependency_links = [
-        'http://github.com/bashu/django-teagmhail/tarball/master#egg=django-teagmhail',
+        'django-contact-form==0.8.1',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[
