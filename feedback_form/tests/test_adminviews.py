@@ -18,19 +18,18 @@ class FeedbackAdminTest(TestCase):
 
     def setUp(self):
         self.user = User.objects.get(username='jane')
-        self.client.login(username='john', password='123')
         self.changelist_url = reverse('admin:contact_form_feedback_changelist')
+
+        self.client.login(username='john', password='123')  # login as superuser
 
     def test_anonymous(self):
         Feedback.objects.create(**self.model_info)
 
         response = self.client.get(self.changelist_url)
-
         self.failUnless("<td>user@example.com</td>" in response.content)
 
     def test_authenticated(self):
         Feedback.objects.create(user=self.user, **self.model_info)
 
         response = self.client.get(self.changelist_url)
-
         self.failUnless("""td><a href="/admin/auth/user/%s/">user@example.com</a></td>""" % self.user.pk in response.content)
