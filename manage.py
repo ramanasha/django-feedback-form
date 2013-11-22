@@ -33,7 +33,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
 
-    'crispy_forms',
     'contact_form',
     'django_jenkins',
     'discover_runner',
@@ -44,8 +43,6 @@ TEMPLATE_DIRS = [
     ]
 
 SITE_ID = 1
-
-CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 ROOT_URLCONF = 'test_urls'
 
@@ -67,7 +64,6 @@ if __name__ == "__main__":
         INSTALLED_APPS = INSTALLED_APPS,
         ROOT_URLCONF = ROOT_URLCONF,
         MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES,
-        CRISPY_TEMPLATE_PACK = CRISPY_TEMPLATE_PACK,
         SITE_ID = SITE_ID,
         PROJECT_APPS = PROJECT_APPS,
         TEST_RUNNER = TEST_RUNNER,

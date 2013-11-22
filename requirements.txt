@@ -1,6 +1,5 @@
 django==1.4.5
 akismet==0.2.0
-django-crispy-forms==1.4.0
 django-contact-form==0.8.1
 django-discover-runner
 git+https://github.com/kmmbvnr/django-jenkins.git#egg=django-jenkins

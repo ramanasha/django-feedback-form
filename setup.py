@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-feedback-form',
-    version='0.1.1',
+    version='0.1.2',
     packages=['feedback_form'],
     include_package_data=True,
     license='BSD License',
@@ -18,7 +18,6 @@ setup(
     author='Basil Shubin',
     install_requires=[
         'akismet==0.2.0',
-        'django-crispy-forms==1.4.0',
         'django-contact-form==0.8.1',
     ],
     author_email='basil.shubin@gmail.com',
