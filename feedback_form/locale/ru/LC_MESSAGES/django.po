@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: feedback_form 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-05-10 15:40+0700\n"
-"PO-Revision-Date: 2014-05-10 15:42+0700\n"
+"PO-Revision-Date: 2014-05-10 16:01+0700\n"
 "Last-Translator: Basil Shubin <basil.shubin@gmail.com>\n"
 "Language-Team:  <RU@li.org>\n"
 "Language: ru\n"
@@ -29,11 +29,11 @@ msgstr ""
 
 #: forms.py:21
 msgid "John Doe"
-msgstr "Вася Пупкин"
+msgstr "Павел Дуров"
 
 #: forms.py:23
 msgid "john.doe@example.com"
-msgstr "pupkin@mail.ru"
+msgstr "durov@vk.com"
 
 #: forms.py:25
 msgid "O hai, world!"
