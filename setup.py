@@ -18,7 +18,7 @@ setup(
     author='Basil Shubin',
     install_requires=[
         'akismet==0.2.0',
-        'django-contact-form==0.8.1',
+        'django-contact-form==1.0',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[
