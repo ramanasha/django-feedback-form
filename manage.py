@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import os
+import os, sys
 
-from django.core.management import execute_manager
+#from django.core.management import execute_from_command_line
+from django.core.management import ManagementUtility
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -35,7 +36,6 @@ INSTALLED_APPS = [
 
     'contact_form',
     'django_jenkins',
-    'discover_runner',
     ] + PROJECT_APPS
 
 TEMPLATE_DIRS = [
@@ -45,8 +45,6 @@ TEMPLATE_DIRS = [
 SITE_ID = 1
 
 ROOT_URLCONF = 'test_urls'
-
-TEST_RUNNER = 'discover_runner.DiscoverRunner'
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_flake8',
@@ -66,11 +64,11 @@ if __name__ == "__main__":
         MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES,
         SITE_ID = SITE_ID,
         PROJECT_APPS = PROJECT_APPS,
-        TEST_RUNNER = TEST_RUNNER,
         JENKINS_TASKS = JENKINS_TASKS,
         COVERAGE_EXCLUDES_FOLDERS = COVERAGE_EXCLUDES_FOLDERS,
         PYLINT_RCFILE = PYLINT_RCFILE,
         TEMPLATE_DIRS = TEMPLATE_DIRS,
         TEMPLATE_DEBUG = TEMPLATE_DEBUG
         )
-    execute_manager(settings)
+    utility = ManagementUtility(sys.argv)
+    utility.execute()

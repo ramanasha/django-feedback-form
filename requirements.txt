@@ -1,6 +1,5 @@
-django==1.4.10
+django
 akismet==0.2.0
 django-contact-form==1.0
-django-discover-runner
-git+https://github.com/kmmbvnr/django-jenkins.git#egg=django-jenkins
+django-jenkins
 flake8
