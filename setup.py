@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-feedbacker',
-    version='0.1.4',
+    version='0.1.5',
     packages=['feedback_form'],
     include_package_data=True,
     license='BSD License',
@@ -17,6 +17,7 @@ setup(
     url='http://github.com/bashu/django-feedback-form',
     author='Basil Shubin',
     install_requires=[
+        'django>=1.5',
         'akismet==0.2.0',
         'django-contact-form==1.0',
     ],
