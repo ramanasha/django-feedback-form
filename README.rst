@@ -8,10 +8,10 @@ Put short description here...
    :target: https://travis-ci.org/bashu/django-feedback-form
    :alt: Build Status
 
-.. image:: https://badge.fury.io/py/django-feedback-form.png
-   :target: http://badge.fury.io/py/django-feedback-form
+.. image:: https://badge.fury.io/py/django-feedback-form2.png
+   :target: http://badge.fury.io/py/django-feedback-form2
    :alt: Latest Release
 
-.. image:: https://pypip.in/d/django-feedback-form/badge.png
-   :target: https://crate.io/packages/django-feedback-form?version=latest
+.. image:: https://pypip.in/d/django-feedback-form2/badge.png
+   :target: https://crate.io/packages/django-feedback-form2?version=latest
    :alt: Downloads
