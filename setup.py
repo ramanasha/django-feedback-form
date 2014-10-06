@@ -18,8 +18,8 @@ setup(
     author='Basil Shubin',
     install_requires=[
         'django>=1.5',
-        'akismet==0.2.0',
-        'django-contact-form==1.0',
+        'akismet>=0.2.0',
+        'django-contact-form>=1.0',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[
