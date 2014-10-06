@@ -7,8 +7,8 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-feedbacker',
-    version='0.1.5',
+    name='django-feedback-form2',
+    version='0.1.6',
     packages=['feedback_form'],
     include_package_data=True,
     license='BSD License',
@@ -18,8 +18,8 @@ setup(
     author='Basil Shubin',
     install_requires=[
         'django>=1.5',
-        'akismet==0.2.0',
-        'django-contact-form==1.0',
+        'akismet>=0.2.0',
+        'django-contact-form>=1.0',
     ],
     author_email='basil.shubin@gmail.com',
     classifiers=[

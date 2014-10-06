@@ -7,6 +7,8 @@ from django.utils.translation import ugettext as _
 
 from contact_form.forms import ContactForm
 
+from .models import Feedback
+
 # I put this on all required fields, because it's easier to pick up
 # on them with CSS or JavaScript if they have a class of "required"
 # in the HTML. Your mileage may vary.
@@ -54,5 +56,14 @@ class FeedbackForm(AkismetContactForm):
             attrs=dict(attrs_dict, placeholder=_("O hai, world!")))
 
     def save(self, fail_silently=False):
+        fb = Feedback(
+            name=self.cleaned_data['name'],
+            email=self.cleaned_data['email'],
+            body=self.cleaned_data['body'],
+        )
+        if self.request.user.is_authenticated():
+            fb.user = self.request.user
+        fb.save()
+
         super(FeedbackForm, self).save(fail_silently)
         messages.success(self.request, _("Your email was sent successfully!"))

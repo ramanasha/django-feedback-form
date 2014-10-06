@@ -1,5 +1,5 @@
 django
-akismet==0.2.0
-django-contact-form==1.0
+akismet>=0.2.0
+django-contact-form>=1.0
 django-jenkins
 flake8
