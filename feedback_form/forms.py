@@ -46,7 +46,15 @@ class AkismetContactForm(ContactForm):
 
 class FeedbackForm(AkismetContactForm):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, request, *args, **kwargs):
+        initial = {}
+        if 'request' in kwargs:
+            initial.update({
+                'name': kwargs['request'].user.get_full_name(),
+                'email': kwargs['request'].user.email,
+            })
+        kwargs['initial'].update(initial)
+
         super(FeedbackForm, self).__init__(*args, **kwargs)
         self.fields['name'].widget = forms.TextInput(
             attrs=dict(attrs_dict, placeholder=_("John Doe")))
