@@ -46,7 +46,7 @@ class AkismetContactForm(ContactForm):
 
 class FeedbackForm(AkismetContactForm):
 
-    def __init__(self, request, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         initial = {}
         if 'request' in kwargs:
             initial.update({

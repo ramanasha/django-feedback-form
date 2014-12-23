@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-feedback-form2',
-    version='0.1.6.1',
+    version='0.1.7',
     packages=['feedback_form'],
     include_package_data=True,
     license='BSD License',
