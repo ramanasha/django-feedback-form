@@ -47,11 +47,13 @@ class AkismetContactForm(ContactForm):
 class FeedbackForm(AkismetContactForm):
 
     def __init__(self, *args, **kwargs):
+        request = kwargs.get('request', None)
+
         initial = {}
-        if 'request' in kwargs:
+        if hasattr(request, 'user') and request.user.is_authenticated():
             initial.update({
-                'name': kwargs['request'].user.get_full_name(),
-                'email': kwargs['request'].user.email,
+                'name': request.user.get_full_name(),
+                'email': request.user.email,
             })
         kwargs['initial'].update(initial)
 
