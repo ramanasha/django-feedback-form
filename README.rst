@@ -13,5 +13,5 @@ Put short description here...
    :alt: Latest Release
 
 .. image:: https://pypip.in/d/django-feedback-form2/badge.png
-   :target: https://crate.io/packages/django-feedback-form2?version=latest
+   :target: https://pypi.python.org/pypi/django-feedback-form2
    :alt: Downloads
