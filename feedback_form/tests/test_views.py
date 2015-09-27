@@ -27,4 +27,4 @@ class FeedbackViewTest(TestCase):
 
         # check for success message...
         for m in response.context['messages']:
-            self.assertTrue("Your email was sent successfully!", unicode(m))
+            self.assertTrue("Your email was sent successfully!", str(m))

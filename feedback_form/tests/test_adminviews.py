@@ -32,11 +32,12 @@ class FeedbackAdminTest(TestCase):
         Feedback.objects.create(**self.model_info)
 
         response = self.client.get(self.changelist_url)
-        self.failUnless("""user@example.com""" in response.content)
+        self.assertTrue("""user@example.com""" in str(response.content))
 
     def test_authenticated(self):
         Feedback.objects.create(user=self.user, **self.model_info)
 
         response = self.client.get(self.changelist_url)
-        self.failUnless("""<a href="/admin/auth/user/%s/">user@example.com</a>""" %
-                        self.user.pk in response.content)
+        self.assertTrue(
+            """<a href="/admin/auth/user/%s/">user@example.com</a>""" % (self.user.pk) in str(response.content))
+            
