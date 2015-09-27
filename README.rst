@@ -27,7 +27,7 @@ Either checkout ``feedback_form`` from GitHub, or install using ``pip`` :
 
 .. code-block:: bash
 
-    pip install django-feedback-form
+    pip install django-feedback-form2
 
 Setup
 -----
