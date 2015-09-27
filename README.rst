@@ -2,16 +2,17 @@ django-feedback-form
 ====================
 
 django-feedback-form application provides simple, extensible
-contact-form functionality for `Django <https://djangoproject.com/>`_ sites.
+feedback-form functionality for `Django <https://djangoproject.com/>`_
+sites.
 
-.. image:: https://img.shields.io/pypi/v/django-feedback-form.svg
-    :target: https://pypi.python.org/pypi/django-feedback-form/
+.. image:: https://img.shields.io/pypi/v/django-feedback-form2.svg
+    :target: https://pypi.python.org/pypi/django-feedback-form2/
 
-.. image:: https://img.shields.io/pypi/dm/django-feedback-form.svg
-    :target: https://pypi.python.org/pypi/django-feedback-form/
+.. image:: https://img.shields.io/pypi/dm/django-feedback-form2.svg
+    :target: https://pypi.python.org/pypi/django-feedback-form2/
 
 .. image:: https://img.shields.io/github/license/bashu/django-feedback-form.svg
-    :target: https://pypi.python.org/pypi/django-feedback-form/
+    :target: https://pypi.python.org/pypi/django-feedback-form2/
 
 .. image:: https://img.shields.io/travis/bashu/django-feedback-form.svg
     :target: https://travis-ci.org/bashu/django-feedback-form/
