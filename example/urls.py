@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
-from django.conf.urls import patterns, include, url
+from django.conf.urls import *
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^feedback/', include('feedback_form.urls')),
+    url(r'^', include('feedback_form.urls')),
 )

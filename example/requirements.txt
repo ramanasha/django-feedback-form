@@ -1,3 +1,4 @@
-coveralls
+django
 django-contact-form>=1.0
+south
 
