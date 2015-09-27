@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.template.defaultfilters import truncatewords
 
+try:
+    from django.contrib.auth import get_user_model
+
+    User = get_user_model()
+except ImportError:
+    from django.contrib.auth.models import User
 
 class Feedback(models.Model):
 
@@ -18,3 +24,6 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = _("feedback")
         verbose_name_plural = _("feedbacks")
+
+    def __str__(self):
+        return truncatewords(self.body, 16)
