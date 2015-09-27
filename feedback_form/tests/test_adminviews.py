@@ -1,35 +1,42 @@
 # -*- coding: utf-8 -*-
 
 from django.test import TestCase
-from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
-from feedback_form.models import Feedback
+try:
+    from django.contrib.auth import get_user_model
+
+    User = get_user_model()
+except ImportError:
+    from django.contrib.auth.models import User
+
+from ..models import Feedback
 
 
 class FeedbackAdminTest(TestCase):
-    fixtures = ['users']
 
     model_info = {
         'name': 'user',
         'email': 'user@example.com',
         'body': 'o hai, world!',
-        }
+    }
 
     def setUp(self):
-        self.user = User.objects.get(username='jane')
-        self.changelist_url = reverse('admin:feedback_form_feedback_changelist')
+        User.objects.create_superuser(username='admin', email='admin@example.com', password='123')
 
-        self.client.login(username='john', password='123')  # login as superuser
+        self.user = User.objects.create_user(username='user', email='user@example.com')
+        self.changelist_url = reverse('admin:feedback_form_feedback_changelist')
+        self.client.login(username='admin', password='123')  # login as superuser
 
     def test_anonymous(self):
         Feedback.objects.create(**self.model_info)
 
         response = self.client.get(self.changelist_url)
-        self.failUnless("""<td class="field-email_link">user@example.com</td>""" in response.content)
+        self.failUnless("""user@example.com""" in response.content)
 
     def test_authenticated(self):
         Feedback.objects.create(user=self.user, **self.model_info)
 
         response = self.client.get(self.changelist_url)
-        self.failUnless("""<td class="field-email_link"><a href="/admin/auth/user/%s/">user@example.com</a></td>""" % self.user.pk in response.content)
+        self.failUnless("""<a href="/admin/auth/user/%s/">user@example.com</a>""" %
+                        self.user.pk in response.content)

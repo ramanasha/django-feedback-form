@@ -1,5 +1,4 @@
-django
-akismet>=0.2.0
+akismet
+coveralls
 django-contact-form>=1.0
-django-jenkins
-flake8
+

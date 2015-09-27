@@ -10,7 +10,7 @@ class FeedbackViewTest(TestCase):
         'name': 'Joe User',
         'email': 'joeuser@example.com',
         'body': 'Hello, World!',
-        }
+    }
 
     def test_post_with_redirect(self):
         response = self.client.post(reverse('contact_form'), self.post_data)
