@@ -1,3 +1,0 @@
-coveralls
-django-contact-form>=1.0
-

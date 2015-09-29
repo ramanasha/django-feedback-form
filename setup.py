@@ -4,12 +4,22 @@ import os
 import re
 import sys
 import codecs
+import subprocess
 
 from setuptools import setup, find_packages
 
+from setuptools.command.test import test as TestCommand
+
+
+class TestRunner(TestCommand):
+    user_options = []
+
+    def run(self):
+        raise SystemExit(subprocess.call([sys.executable, 'runtests.py']))
+
 
 # When creating the sdist, make sure the django.mo file also exists:
-if 'sdist' in sys.argv or 'develop' in sys.argv:
+if 'sdist' in sys.argv:
     os.chdir('feedback_form')
     try:
         from django.core.management.commands.compilemessages import Command
@@ -43,6 +53,7 @@ setup(
 
     install_requires=[
         'django-contact-form>=1.0',
+        'django>=1.4.2',
     ],
     requires=[
         'Django (>=1.4.2)',
@@ -60,6 +71,12 @@ setup(
     packages=find_packages(exclude=('example*', '*.tests*')),
     include_package_data=True,
 
+    tests_require=[
+    ],
+    cmdclass={
+        'test': TestRunner,
+    },
+
     zip_safe=False,
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -69,10 +86,10 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
