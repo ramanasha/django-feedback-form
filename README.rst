@@ -17,9 +17,6 @@ sites.
 .. image:: https://img.shields.io/travis/bashu/django-feedback-form.svg
     :target: https://travis-ci.org/bashu/django-feedback-form/
 
-.. image:: https://landscape.io/github/bashu/django-feedback-form/develop/landscape.svg?style=flat
-    :target: https://landscape.io/github/bashu/django-feedback-form/develop
-
 Installation
 ------------
 
