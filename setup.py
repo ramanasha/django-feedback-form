@@ -47,7 +47,7 @@ def find_version(*parts):
 
 
 setup(
-    name='django-feedback-form2',
+    name='django-feedback-form-deux',
     version=find_version('feedback_form', '__init__.py'),
     license='BSD License',
 
